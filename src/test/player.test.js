@@ -87,6 +87,16 @@ describe('AudioPlayer', () => {
         expect(mockAudio.volume).toBe(0.8);
     });
 
-    
+    test('correct player progress percentage', () => {
+        audioPlayer.player.currentTime = 50;
+        audioPlayer.player.duration = 200;
+        
+        const playedTime = audioPlayer.player.currentTime
+        const musicLength = audioPlayer.player.duration;
+
+        const percent = (playedTime / musicLength) * 100;
+
+        expect(percent).toBeCloseTo(25);
+    });
 
 })
