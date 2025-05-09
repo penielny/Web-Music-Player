@@ -5,11 +5,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
-    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
+    <main class="main-container">
+        <!-- main view  -->
+        <div class="home-view">
+            <!-- top view -->
+            <div class="home-header">
+                <div class="top-bar">
+                    <div class="search-container">
+                        <ion-icon name="search"></ion-icon>
+                        <input placeholder="Search music title ..." class="search-input" />
+                    </div>
+                    <div class="profile">
+                    </div>
+                </div>
 
+                <!-- listing view -->
+                <div class="for-you-container">
+                    <h3>For you</h3>
+                    <div class="for-you-listing">
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="chart-tracking-container">
+                <!-- top song chart -->
+                <div class="top-song-chart">
+                    <h3>Top Songs </h3>
+                    <div class="chart-item">
+                        <!-- album art -->
+                        <div class="album">
+                            <img src="https://i.scdn.co/image/ab67616d00001e0240bf26bf68342abecb59ba93"
+                                alt="album art for title" />
+                        </div>
+                        <!-- info container -->
+                        <div class="chart-info">
+                            <h4>Falling Back</h4>
+                            <p>Migos, Drake - Culture II</p>
+                        </div>
+                        <div class="spacer"></div>
+                        <p>3:26</p>
+                        <button class="btn-to-playlist">
+                            <ion-icon size="small" name="add"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- play list chart -->
+                <div class="playlist-chart">
+
+                    <h3>Playlist</h3>
+
+                    <div class="chart-item">
+                        <!-- album art -->
+                        <div class="album">
+                            <img src="https://i.scdn.co/image/ab67616d00001e0240bf26bf68342abecb59ba93"
+                                alt="album art for title" />
+                        </div>
+                        <!-- info container -->
+                        <div class="chart-info">
+                            <h4>This is Drake</h4>
+                            <p>This is Drake. The essential tracks, all in one playlist.</p>
+                        </div>
+                        <div class="spacer"></div>
+
+                        <button class="btn-to-playlist">
+                            <ion-icon size="small" name="add"></ion-icon>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <!-- playlist listing  -->
+        <div class="playlist-container hidden">
+            <div class="inner-playlist-container">
+                <div class="close-controller-container">
+                   
+                </div>
+                    <!-- selected playlist listing -->
+                <aside class="playlist-list-container">
+                    <div class="playlist-title">
+                        <!-- album art -->
+                        <div class="playlist-album">
+                            <img src="https://i.scdn.co/image/ab67706f0000000287bff188c40608c48b82068f"
+                                alt="album art for title" />
+                        </div>
+                        <!-- info container -->
+                        <div class="playlist-info">
+                            <h4>This is Drake</h4>
+                            <p>This is Drake. The essential tracks, all in one playlist.</p>
+                            <p>20 Tracks</p>
+                        </div>
+                        <div class="spacer"></div>
+                    </div>
+                    <div class="playlist-action-container">
+                        <button class="play-play-list">
+                            Play
+                        </button>
+                    </div>
+                    <h3>Tracks</h3>
+                    <!-- list tracks -->
+                    <div class="playlist-tracks">
+
+                    </div>
+                </aside>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer class="player-control-container hide-player">
+        <div class="player-duration">
+            <input value="50" max="100" type="range" />
+        </div>
+        <div class="playing-music">
+            <div class="chart-item">
+                <!-- album art -->
+                <div class="album">
+                    <img src="https://i.scdn.co/image/ab67616d00001e0240bf26bf68342abecb59ba93"
+                        alt="album art for title" />
+                </div>
+                <!-- info container -->
+                <div class="chart-info">
+                    <h4>Falling Back</h4>
+                    <p>Migos, Drake - Culture II</p>
+                </div>
+            </div>
+        </div>
+        <div class="playback-container">
+            <div class="playback-controller">
+                <button id="prev-button">
+                    <ion-icon name="play-skip-back"></ion-icon>
+                </button>
+                <button id="play-button">
+                    <ion-icon name="play"></ion-icon>
+                </button>
+                <button id="next-button">
+                    <ion-icon name="play-skip-forward"></ion-icon>
+                </button>
+            </div>
+            <div></div>
+        </div>
+        <div class="volume-control-container">
+            <ion-icon size="large" name="volume-medium"></ion-icon>
+            <input type="range" />
+        </div>
+    </footer>
+    <script type="module" src="./ui.js"></script>
 </body>
 
 </html>
